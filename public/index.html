@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>title</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js" ></script>
+</head>
+<body>
+  <div id="results"></div>
+  <script id="temp" type="text/x-handlebars-template">
+    <table>
+      <tbody>
+        <tr id="head">
+          <td class="place_"></td>
+          <td class="name_">Команда</td>
+          <td class="matches">М</td>
+          <td class="win">В</td>
+          <td class="draw">Н</td>
+          <td class="lose">П</td>
+          <td class="goals">Заб</td>
+          <td class="conceded_goals">Проп</td>
+          <td class="score">O</td>
+        </tr>
+        {{#each responseText}}
+          <tr>
+            <td class="place_{{color}}">{{place}}</td>
+            <td class="name_{{flag_country}}"><a href="{{tag_url}}">{{name}}</a></td>
+            <td class="matches">{{matches}}</td>
+            <td class="win">{{win}}</td>
+            <td class="draw">{{draw}}</td>
+            <td class="lose">{{lose}}</td>
+            <td class="goals">{{goals}}</td>
+            <td class="conceded_goals">{{conceded_goals}}</td>
+            <td class="score">{{score}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <div id="post-info"><span>М</span> - матчи,<span>В</span> - выигрыши,<span>Н</span> - ничьи,<span>П</span> - проигрыши,<span>Заб</span> - забитые голы,<span>Проп</span> - пропущенные голы,<span>О</span> - очки в турнире</div>
+  </script>
+  <script src="js/script.js" ></script>
+</body>
+</html>

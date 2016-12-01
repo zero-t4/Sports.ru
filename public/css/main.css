@@ -1,0 +1,175 @@
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+table{
+  height:100%;
+  width: 100%;
+  border-collapse:collapse;
+  margin: 0 auto;
+}
+table, tbody, tr {
+  height:100%;
+  width: 100%;
+}
+tbody {
+  margin: 0;
+  display: block;
+  padding: 0;
+  min-width: 600px;
+}
+#results {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#post-info {
+  margin-top: 23px;
+  margin-left: 18px;
+  font-size: 13px;
+}
+#post-info > span{
+  font-weight: bold;
+}
+#head > td{
+  border-top: 1px solid #d8d8d8;
+  color: black !important;
+}
+#head>div {
+  color: #006496;
+  font-weight: bold;
+}
+.name_ {
+  color: black !important;
+  text-align: left !important;
+}
+.name_, .name_italy {
+  min-width: 150px;
+  width: 72% !important;
+}
+.place_1 {
+  background: #7fd498;
+  width: 40px !important;
+  float: left;
+}
+.place_2 {
+  background: #cceed6;
+  width: 40px !important;
+  float: left;
+}
+.place_ {
+  width: 40px !important;
+  float: left;
+}
+.place_4 {
+  background: #ff99b1;
+  width: 40px !important;
+  float: left;
+}
+* a {
+  color: #006496;
+  text-decoration: none;
+}
+.name_italy:before {
+  content: "";
+  width: 16px;
+  margin: 10px 5px 0 7px;
+  display: block;
+  float: left;
+  height: 30px;
+  background: url(../pic/italy.png) no-repeat;
+}
+.name_italy  {
+  line-height: 33px;
+}
+.matches {
+  border-left: 1px solid #d8d8d8;
+  
+}
+.matches, .win, .draw, .lose, .goals, .conceded_goals, .name_, .score,.place_1, .place_2, .place_, .place_4{
+  width: 60px;
+  text-align: center;
+  line-height: 30px;
+}
+.score {
+  background: #f9f9f7;
+  width: 50px;
+}
+tr {
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  padding: 0;
+}
+td {
+  padding: 0;
+  box-sizing: border-box;
+}
+tr > td{
+  float: left;
+  height: 31px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+@media screen and (max-width: 1700px) {
+  .name_, .name_italy { 
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .name_, .name_italy { 
+    width: 67% !important;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .name_, .name_italy { 
+    width: 63% !important;
+  }
+}
+@media screen and (max-width: 1320px) {
+  .name_, .name_italy { 
+
+    width: 54% !important;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .name_, .name_italy { 
+
+    width: 47% !important;
+  }
+}
+@media screen and (max-width: 950px) {
+  .name_, .name_italy { 
+
+    width: 43% !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .name_, .name_italy { 
+
+    width: 37% !important;
+  }
+}
+@media screen and (max-width: 850px) {
+  .name_, .name_italy { 
+    min-width: 150px;
+    width: 27% !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .name_, .name_italy { 
+    min-width: 150px;
+  }
+  .win, .draw, .lose, .goals, .conceded_goals {
+    display: none;
+  }
+}
+
+
+
+
+
+
