@@ -33,7 +33,7 @@ window.onload = function() {
     
         results.innerHTML = template;
       }
-    }, 
+    },
     () => {
       alert('Some error occurred');
     }
