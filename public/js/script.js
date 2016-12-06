@@ -39,34 +39,29 @@ window.onload = function() { //после загрузки
         clone[key] = responseText[key];
       }
       
-      let win = document.querySelector('#win'); // обработка сортировки
-      let draw = document.querySelector('#draw'); // обработка сортировки
-      win.addEventListener('click', cb1);
-      draw.addEventListener('click', cb2);
+      let sort = document.querySelector('.sort'); // обработка сортировки
 
+      sort.addEventListener('click', cb1);
       
       function cb1(e) {
           let currentID = e.target.getAttribute('id');
           filter(currentID);
       }
       
-      function cb2(e) {
-          let currentID = e.target.getAttribute('id');
-          filter(currentID);
-      }
       
       function filter(currentID) {
         if(currentID != 'restart') {
           restoreObjValue();
           console.time('set2');
-          for(let i = 0; i < responseText.teams.length-1;) {
-              if(responseText.teams[i][currentID] < responseText.teams[i+1][currentID]) {
-                responseText.teams.splice(i, 0, responseText.teams[i+1]);
-                responseText.teams.splice(i+2, 1);
-                i = 0;
-              }else {
-                ++i;
-              }
+          for(let i = 0; i < responseText.teams.length-1; i++) {
+            let max = 0;
+            let maxO;
+            let pos;
+            for(var j = i; j < responseText.teams.length; j++) {
+              if(max <= responseText.teams[j][currentID]) {max = responseText.teams[j][currentID]; maxO = responseText.teams[j]; pos = j};
+            }
+            responseText.teams.splice(i, 0, maxO);
+            responseText.teams.splice(pos+1, 1);
           }
           console.timeEnd('set2');
           show(responseText);
@@ -85,7 +80,7 @@ window.onload = function() { //после загрузки
           responseText[key] = clone[key];
         }
       }
-// SOME error hides here
+
     },
     () => {
       alert('Some error occurred');
